@@ -30,7 +30,7 @@ body {
 
         & > #submit-button {
             margin-top: 10px;
-            width: 100%;
+            width: 100px;
             background-color: #9B86BD;
             color: white;
             border: none;
