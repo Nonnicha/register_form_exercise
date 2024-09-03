@@ -1,17 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css" rel="stylesheet">
-    <link href="register_form_style.css" rel="stylesheet">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css"
+      rel="stylesheet"
+    />
+    <link href="register_form_style.css" rel="stylesheet" />
     <title>Register form</title>
-</head>
-<body>
+  </head>
+  <body>
     <div id="register-card">
-        <form id="register-form">
-            <h1>Register form</h1>
-        </form>
+      <form id="register-form">
+        <h1>Register form</h1>
+        <div class="input-row">
+            <div class="input-group">
+                <label for="firstName">First Name:</label>
+                <input type="text" name="firstName" id="firstName" required />
+            </div>
+            <div class="input-group">
+                <label for="lastName">Last Name:</label>
+                <input type="text" name="lastName" id="lastName" required />
+            </div>
+        </div>
+        <div class="input-row">
+            <div class="input-group">
+                <label for="birthday">Birthday:</label>
+                <input type="date" id="birthday" name="birthday">
+            </div>
+            <div class="input-group">
+                <div class="radio-button">
+                    <p>Gender:</p>
+                    <div class="radio-group">
+                        <input type="radio" id="male" name="gender" value="Male">
+                        <label for="male">Male</label><br>
+                        <input type="radio" id="female" name="gender" value="Female">
+                        <label for="female">Female</label><br>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="input-row">
+            <div class="input-group">
+                <label for="email">Email:</label>
+                <input type="email" name="email" id="email" required />
+            </div>
+            <div class="input-group">
+                <label for="phone">Phone:</label>
+                <input type="tel" name="phone" id="phone" required />
+            </div>
+        </div>
+        <div class="input-row">
+            <div class="input-group">
+                <label for="subjects">Subject:</label>
+                <select name="subjects" id="subjects">
+                    <option value="" selected disabled>Choose option</option>
+                    <option value="html">HTML</option>
+                    <option value="css">CSS</option>
+                    <option value="javascript">Javascript</option>
+                </select>
+            </div>
+        </div>
+        <input id="submit-button" type="submit" value="Register" />
+      </form>
     </div>
-</body>
+  </body>
 </html>
