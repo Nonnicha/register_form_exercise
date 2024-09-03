@@ -5,6 +5,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 0;
 }
 
 #register-card {
@@ -14,6 +15,7 @@ body {
     border-radius: 10px;
     background: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: padding 0.5s ease, max-width 0.5s ease;
     
     & > #register-form {
         display: flex;
@@ -23,11 +25,12 @@ body {
             font-size: 30px;
             font-weight: bold;
             margin-bottom: 20px;
+            transition: font-size 0.5s ease;
         }
 
         & > #submit-button {
             margin-top: 10px;
-            width: 100px;
+            width: 100%;
             background-color: #9B86BD;
             color: white;
             border: none;
@@ -49,10 +52,12 @@ body {
             gap: 20px;
             margin: 20px 0 10px 0;
             margin-top: 10px;
+            transition: flex-direction 0.5s ease, gap 0.5s ease;
 
             & > .input-group {
                 width: 100%;
                 font-size: 16px;
+                transition: width 0.5s ease;
 
                 & > input, select {
                     box-sizing: border-box;
@@ -63,6 +68,7 @@ body {
                     border: 1px solid #ccc;
                     font-size: 16px;
                     padding: 10px;
+                    transition: padding 0.5s ease, font-size 0.5s ease;
                 }
 
                 & > .radio-button > .radio-group {
@@ -80,6 +86,7 @@ body {
 @media (max-width: 600px) {
     #register-card {
         padding: 40px 20px;
+        max-width: 90%;
     }
 
     #register-card > #register-form > h1 {
