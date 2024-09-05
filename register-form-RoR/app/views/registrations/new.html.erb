@@ -14,11 +14,11 @@
         <div class="input-row">
           <div class="input-group">
             <%= f.label :firstName, "First Name:" %>
-            <%= f.text_field :firstName, id: "firstName" %>
+            <%= f.text_field :firstName, id: "firstName", required: true %>
           </div>
           <div class="input-group">
             <%= f.label :lastName, "Last Name:" %>
-            <%= f.text_field :lastName, id: "lastName" %>
+            <%= f.text_field :lastName, id: "lastName", required: true %>
           </div>
         </div>
 
@@ -43,11 +43,11 @@
         <div class="input-row">
           <div class="input-group">
             <%= f.label :email, "Email:" %>
-            <%= f.text_field :email, id: "email" %>
+            <%= f.email_field :email, id: "email", required: true %>
           </div>
           <div class="input-group">
             <%= f.label :phone, "Phone:" %>
-            <%= f.text_field :phone, id: "phone" %>
+            <%= f.telephone_field :phone, id: "phone", required: true %>
           </div>
         </div>
 
