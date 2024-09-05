@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <%= stylesheet_link_tag 'https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css' %>
+    <%= stylesheet_link_tag 'register_form_style' %>
+    <title>Register form</title>
+  </head>
+  <body>
+    <div id="register-card">
+      <%= form_with model: @user, url: users_path, method: :post, id: "register-form" do |f| %>
+        <h1>Register form</h1>
+
+        <div class="input-row">
+          <div class="input-group">
+            <%= f.label :first_name, "First Name:" %>
+            <%= f.text_field :first_name, id: "firstName", required: true %>
+          </div>
+          <div class="input-group">
+            <%= f.label :last_name, "Last Name:" %>
+            <%= f.text_field :last_name, id: "lastName", required: true %>
+          </div>
+        </div>
+
+        <div class="input-row">
+          <div class="input-group">
+            <%= f.label :birthday, "Birthday:" %>
+            <%= f.date_field :birthday, id: "birthday" %>
+          </div>
+          <div class="input-group">
+            <div class="radio-button">
+              <p>Gender:</p>
+              <div class="radio-group">
+                <%= f.radio_button :gender, "Male", id: "male" %>
+                <%= f.label :gender, "Male", for: "male" %><br>
+                <%= f.radio_button :gender, "Female", id: "female" %>
+                <%= f.label :gender, "Female", for: "female" %><br>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="input-row">
+          <div class="input-group">
+            <%= f.label :email, "Email:" %>
+            <%= f.email_field :email, id: "email", required: true %>
+          </div>
+          <div class="input-group">
+            <%= f.label :phone, "Phone:" %>
+            <%= f.telephone_field :phone, id: "phone", required: true %>
+          </div>
+        </div>
+
+        <div class="input-row">
+          <div class="input-group">
+            <%= f.label :subject, "Subject:" %>
+            <%= f.select :subject, options_for_select([['Choose option', nil], 'HTML', 'CSS', 'Javascript'], selected: nil), id: "subjects" %>
+          </div>
+        </div>
+
+        <%= f.submit "Register", id: "submit-button" %>
+      <% end %>
+    </div>
+  </body>
+</html>
