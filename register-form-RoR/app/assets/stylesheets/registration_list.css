@@ -58,4 +58,23 @@
       background-color: #c0392b;
     }
   }
+
+  .back-to-home-button {
+    box-sizing: border-box;
+    display: inline-block;
+    padding: 10px 15px;
+    width: 100%;
+    background-color: #9B86BD;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    
+    &:hover {
+      background-color: #7f6d9e;
+    }
+  }
 }

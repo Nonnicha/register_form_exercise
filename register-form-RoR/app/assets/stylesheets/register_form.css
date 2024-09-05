@@ -1,6 +1,5 @@
 body {
-    font-family: sans-serif;
-    background: linear-gradient(to bottom, #9B86BD, #E2BBE9);
+    background: linear-gradient(to bottom, #7776B3,  #9B86BD, #E2BBE9);
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -59,6 +58,11 @@ body {
                 font-size: 16px;
                 transition: width 0.5s ease;
 
+                & > label {
+                    font-size: 20px;
+                    font-weight: 500;
+                }
+
                 & > input, select {
                     box-sizing: border-box;
                     background-color: #fafafa;
@@ -72,9 +76,11 @@ body {
                 }
 
                 & > .radio-button > .radio-group {
+                    height: 100%;
                     margin-top: 5px;
                     display: flex;
                     flex-direction: row;
+                    align-items: center;
                     gap: 5px;
                     padding: 10px 0;
                 }
