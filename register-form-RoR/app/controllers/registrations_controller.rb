@@ -13,7 +13,7 @@ class RegistrationsController < ApplicationController
   end
 
   def index
-    @registration = Registration.all
+    @registrations = Registration.all
   end
 
   private

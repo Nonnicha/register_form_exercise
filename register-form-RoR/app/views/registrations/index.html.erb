@@ -1,10 +1,34 @@
-<p style="color: green"><%= notice %></p>
+<div id="registrations-container">
+  <h1>Registrations</h1>
 
-<h1>Registrations</h1>
-<div id="registrations">
-  <% @registration.each do |registration| %>
-    <%= registration.firstName %>
-    <%= registration.lastName %>
+  <% if @registrations.present? %>
+    <table class="registrations-table">
+      <thead>
+        <tr>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Birthday</th>
+          <th>Gender</th>
+          <th>Email</th>
+          <th>Phone</th>
+          <th>Subject</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @registrations.each do |registration| %>
+          <tr>
+            <td><%= registration.firstName %></td>
+            <td><%= registration.lastName %></td>
+            <td><%= registration.birthday %></td>
+            <td><%= registration.gender %></td>
+            <td><%= registration.email %></td>
+            <td><%= registration.phone %></td>
+            <td><%= registration.subject %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  <% else %>
+    <p class="no-registrations-message">No registrations found.</p>
   <% end %>
 </div>
-
