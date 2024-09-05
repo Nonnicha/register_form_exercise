@@ -22,8 +22,7 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@v2
         with:
-          context: register-form-ror/
-          file: ./register-form-ror/Dockerfile
+          context: ./register-form-RoR
           platforms: linux/amd64,linux/arm64
           push: true
           tags: ${{ secrets.DOCKER_USERNAME }}/register-form-ror:latest
