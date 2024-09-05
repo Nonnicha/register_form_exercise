@@ -1,43 +1,61 @@
 #registrations-container {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  
-    h1 {
-      font-size: 24px;
-      color: #333;
-      margin-bottom: 20px;
-      text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+  h1 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .registrations-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+
+    th,
+    td {
+      padding: 12px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
     }
-  
-    .registrations-table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-bottom: 20px;
-  
-      th,
-      td {
-        padding: 12px;
-        text-align: left;
-        border-bottom: 1px solid #ddd;
-      }
-  
-      th {
-        background-color: #f4f4f4;
-        font-weight: bold;
-      }
-  
-      tr:hover {
-        background-color: #f1f1f1;
-      }
+
+    th {
+      background-color: #f4f4f4;
+      font-weight: bold;
     }
-  
-    .no-registrations-message {
-      font-size: 16px;
-      color: #555;
-      text-align: center;
+
+    tr:hover {
+      background-color: #f1f1f1;
     }
   }
+
+  .no-registrations-message {
+    font-size: 16px;
+    text-align: center;
+  }
+
+  .delete-button {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: #c0392b;
+    }
+  }
+}

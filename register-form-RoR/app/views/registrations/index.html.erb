@@ -24,6 +24,9 @@
             <td><%= registration.email %></td>
             <td><%= registration.phone %></td>
             <td><%= registration.subject %></td>
+            <td>
+              <%= button_to 'Delete', registration_path(registration), method: :delete, data: { confirm: 'Are you sure?' }, class: 'delete-button' %>
+            </td>
           </tr>
         <% end %>
       </tbody>

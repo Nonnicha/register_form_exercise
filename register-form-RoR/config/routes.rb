@@ -1,4 +1,4 @@
 Rails.application.routes.draw do
-  resources :registrations , only: [:new, :create, :index]
+  resources :registrations
   root 'registrations#new'
 end

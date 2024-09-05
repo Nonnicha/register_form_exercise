@@ -16,6 +16,12 @@ class RegistrationsController < ApplicationController
     @registrations = Registration.all
   end
 
+  def destroy
+    @registration = Registration.find(params[:id])
+    @registration.destroy
+    redirect_to registration_path, notice: 'Registration was successfully deleted.'
+  end
+
   private
 
   def registration_params
