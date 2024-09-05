@@ -12,6 +12,7 @@
           <th>Email</th>
           <th>Phone</th>
           <th>Subject</th>
+          <th>Delete</th>
         </tr>
       </thead>
       <tbody>
@@ -25,7 +26,7 @@
             <td><%= registration.phone %></td>
             <td><%= registration.subject %></td>
             <td>
-              <%= button_to 'Delete', registration_path(registration), method: :delete, data: { confirm: 'Are you sure?' }, class: 'delete-button' %>
+              <%= button_to 'Delete', registration_path(registration), method: :delete, class: 'delete-button' %>
             </td>
           </tr>
         <% end %>
