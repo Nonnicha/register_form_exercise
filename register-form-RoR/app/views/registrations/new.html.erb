@@ -4,22 +4,21 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <%= stylesheet_link_tag 'https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css' %>
-    <%= stylesheet_link_tag 'register_form_style' %>
     <title>Register form</title>
   </head>
   <body>
     <div id="register-card">
-      <%= form_with model: @user, url: users_path, method: :post, id: "register-form" do |f| %>
+      <%= form_with(model: @registration, url: registrations_path, id: "register-form") do |f| %>
         <h1>Register form</h1>
 
         <div class="input-row">
           <div class="input-group">
-            <%= f.label :first_name, "First Name:" %>
-            <%= f.text_field :first_name, id: "firstName", required: true %>
+            <%= f.label :firstName, "First Name:" %>
+            <%= f.text_field :firstName, id: "firstName" %>
           </div>
           <div class="input-group">
-            <%= f.label :last_name, "Last Name:" %>
-            <%= f.text_field :last_name, id: "lastName", required: true %>
+            <%= f.label :lastName, "Last Name:" %>
+            <%= f.text_field :lastName, id: "lastName" %>
           </div>
         </div>
 
@@ -44,11 +43,11 @@
         <div class="input-row">
           <div class="input-group">
             <%= f.label :email, "Email:" %>
-            <%= f.email_field :email, id: "email", required: true %>
+            <%= f.text_field :email, id: "email" %>
           </div>
           <div class="input-group">
             <%= f.label :phone, "Phone:" %>
-            <%= f.telephone_field :phone, id: "phone", required: true %>
+            <%= f.text_field :phone, id: "phone" %>
           </div>
         </div>
 

@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Registrations</h1>
+<div id="registrations">
+  <% @registration.each do |registration| %>
+    <%= registration.firstName %>
+    <%= registration.lastName %>
+  <% end %>
+</div>
+
