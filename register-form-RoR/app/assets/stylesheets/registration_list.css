@@ -1,5 +1,5 @@
 #registrations-container {
-  max-width: 900px;
+  max-width: 1000px;
   margin: 0 auto;
   padding: 20px;
   background-color: #f9f9f9;
@@ -17,10 +17,9 @@
     border-collapse: collapse;
     margin-bottom: 20px;
 
-    th,
-    td {
+    th, td {
       padding: 12px;
-      text-align: left;
+      text-align: center;
       border-bottom: 1px solid #ddd;
     }
 
@@ -41,7 +40,6 @@
   }
 
   .delete-button {
-    background-color: #e74c3c;
     color: white;
     border: none;
     padding: 10px 15px;
@@ -52,6 +50,7 @@
     font-weight: bold;
     border-radius: 5px;
     cursor: pointer;
+    background-color: #e74c3c;
     transition: background-color 0.3s ease;
 
     &:hover {
@@ -63,18 +62,20 @@
     display: inline-block;
     padding: 10px 15px;
     width: 100%;
-    background-color: #9B86BD;
     color: white;
     text-align: center;
     text-decoration: none;
     border-radius: 5px;
     font-size: 14px;
     font-weight: bold;
-    transition: background-color 0.3s, scale 0.3s;
+    background: linear-gradient(315deg, #433fff, #34ffae, #c64cff);
+    background-size: 400% 400%;
+    transition: background 0.3s, transform 0.3s;
     
     &:hover {
-      background-color: #7f6d9e;
-      scale: 1.01;
+      background: linear-gradient(315deg, #2c2c77, #28b58e, #a83b9b);
+      background-size: 400% 400%;
+      transform: scale(1.01);
     }
   }
 
@@ -85,7 +86,6 @@
   }
 
   .edit-button {
-    background-color: #7f6d9e;
     color: white;
     border: none;
     padding: 10px 15px;
@@ -96,10 +96,14 @@
     font-weight: bold;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    background: linear-gradient(315deg, #433fff, #34ffae, #c64cff);
+    background-size: 200% 200%;
+    transition: background 0.3s, transform 0.3s;
 
     &:hover {
-      background-color: #5A639C;
+      background: linear-gradient(315deg, #2c2c77, #28b58e, #a83b9b);
+      background-size: 200% 200%;
+      transform: scale(1.01);
     }
   }
 }
