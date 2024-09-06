@@ -14,7 +14,7 @@ body {
     margin: 0;
 }
 
-#register-card {
+.register-card {
     margin: 10px;
     max-width: 600px;
     padding: 60px 40px;
@@ -22,17 +22,17 @@ body {
     background: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     transition: padding 0.5s ease, max-width 0.5s ease;
+
+    & > h1 {
+        font-size: 30px;
+        font-weight: bold;
+        margin-bottom: 20px;
+        transition: font-size 0.5s ease;
+    }
     
-    & > #register-form {
+    & > .register-form {
         display: flex;
         flex-direction: column;
-
-        & > h1 {
-            font-size: 30px;
-            font-weight: bold;
-            margin-bottom: 20px;
-            transition: font-size 0.5s ease;
-        }
 
         & > #submit-button {
             margin-top: 10px;
@@ -103,21 +103,21 @@ body {
 }
 
 @media (max-width: 600px) {
-    #register-card {
+    .register-card {
         padding: 40px 20px;
         max-width: 90%;
     }
 
-    #register-card > #register-form > h1 {
+    .register-card > .register-form > h1 {
         font-size: 24px;
     }
 
-    #register-card > #register-form > .input-row {
+    .register-card > .register-form > .input-row {
         flex-direction: column;
         gap: 10px;
     }
 
-    #register-card > #register-form > #submit-button {
+    .register-card > .register-form > #submit-button {
         width: 100%;
     }
 }

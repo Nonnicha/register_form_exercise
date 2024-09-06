@@ -22,6 +22,19 @@ class RegistrationsController < ApplicationController
     redirect_to registration_path
   end
 
+  def edit
+    @registration = Registration.find(params[:id])
+  end
+  
+  def update
+    @registration = Registration.find(params[:id])
+    if @registration.update(registration_params)
+      redirect_to registrations_path, notice: 'Registration updated successfully.'
+    else
+      render :edit
+    end
+  end
+
   private
 
   def registration_params

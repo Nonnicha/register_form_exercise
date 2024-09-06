@@ -31,6 +31,7 @@
 
     tr:hover {
       background-color: #f1f1f1;
+      scale: 1.01;
     }
   }
 
@@ -74,6 +75,31 @@
     &:hover {
       background-color: #7f6d9e;
       scale: 1.01;
+    }
+  }
+
+  #actions-row {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+  }
+
+  .edit-button {
+    background-color: #7f6d9e;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: #5A639C;
     }
   }
 }

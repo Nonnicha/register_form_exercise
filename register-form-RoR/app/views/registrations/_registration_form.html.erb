@@ -1,0 +1,50 @@
+<%= form_with(model: @registration, class: "register-form") do |f| %>
+        <div class="input-row">
+          <div class="input-group">
+            <%= f.label :firstName, "First Name:" %>
+            <%= f.text_field :firstName, id: "firstName", required: true %>
+          </div>
+          <div class="input-group">
+            <%= f.label :lastName, "Last Name:" %>
+            <%= f.text_field :lastName, id: "lastName", required: true %>
+          </div>
+        </div>
+
+        <div class="input-row">
+          <div class="input-group">
+            <%= f.label :birthday, "Birthday:" %>
+            <%= f.date_field :birthday, id: "birthday" %>
+          </div>
+          <div class="input-group">
+            <div class="radio-button">
+              <p>Gender:</p>
+              <div class="radio-group">
+                <%= f.radio_button :gender, "Male", id: "male" %>
+                <%= f.label :gender, "Male", for: "male" %><br>
+                <%= f.radio_button :gender, "Female", id: "female" %>
+                <%= f.label :gender, "Female", for: "female" %><br>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="input-row">
+          <div class="input-group">
+            <%= f.label :email, "Email:" %>
+            <%= f.email_field :email, id: "email", required: true %>
+          </div>
+          <div class="input-group">
+            <%= f.label :phone, "Phone:" %>
+            <%= f.telephone_field :phone, id: "phone", required: true %>
+          </div>
+        </div>
+
+        <div class="input-row">
+          <div class="input-group">
+            <%= f.label :subject, "Subject:" %>
+            <%= f.select :subject, options_for_select([['Choose option', nil], 'HTML', 'CSS', 'Javascript'], selected: nil), id: "subjects" %>
+          </div>
+        </div>
+
+        <%= f.submit "Submit", id: "submit-button" %>
+      <% end %>

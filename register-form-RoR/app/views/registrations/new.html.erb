@@ -3,65 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <title>Register form</title>
   </head>
   <body>
-    <div id="register-card">
-      <%= form_with(model: @registration, url: registrations_path, id: "register-form") do |f| %>
+    <div class="register-card">
         <h1>Register form</h1>
-
-        <div class="input-row">
-          <div class="input-group">
-            <%= f.label :firstName, "First Name:" %>
-            <%= f.text_field :firstName, id: "firstName", required: true %>
-          </div>
-          <div class="input-group">
-            <%= f.label :lastName, "Last Name:" %>
-            <%= f.text_field :lastName, id: "lastName", required: true %>
-          </div>
-        </div>
-
-        <div class="input-row">
-          <div class="input-group">
-            <%= f.label :birthday, "Birthday:" %>
-            <%= f.date_field :birthday, id: "birthday" %>
-          </div>
-          <div class="input-group">
-            <div class="radio-button">
-              <p>Gender:</p>
-              <div class="radio-group">
-                <%= f.radio_button :gender, "Male", id: "male" %>
-                <%= f.label :gender, "Male", for: "male" %><br>
-                <%= f.radio_button :gender, "Female", id: "female" %>
-                <%= f.label :gender, "Female", for: "female" %><br>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="input-row">
-          <div class="input-group">
-            <%= f.label :email, "Email:" %>
-            <%= f.email_field :email, id: "email", required: true %>
-          </div>
-          <div class="input-group">
-            <%= f.label :phone, "Phone:" %>
-            <%= f.telephone_field :phone, id: "phone", required: true %>
-          </div>
-        </div>
-
-        <div class="input-row">
-          <div class="input-group">
-            <%= f.label :subject, "Subject:" %>
-            <%= f.select :subject, options_for_select([['Choose option', nil], 'HTML', 'CSS', 'Javascript'], selected: nil), id: "subjects" %>
-          </div>
-        </div>
-
-        <%= f.submit "Register", id: "submit-button" %>
-      <% end %>
+        <%= render 'registration_form' %>
     </div>
   </body>
 </html>

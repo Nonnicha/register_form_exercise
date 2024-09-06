@@ -12,7 +12,7 @@
           <th>Email</th>
           <th>Phone</th>
           <th>Subject</th>
-          <th>Delete</th>
+          <th>Actions</th>
         </tr>
       </thead>
       <tbody>
@@ -25,7 +25,8 @@
             <td><%= registration.email %></td>
             <td><%= registration.phone %></td>
             <td><%= registration.subject %></td>
-            <td>
+            <td id="actions-row">
+              <%= link_to 'Edit', edit_registration_path(registration), class: 'edit-button' %>
               <%= button_to 'Delete', registration_path(registration), method: :delete, class: 'delete-button' %>
             </td>
           </tr>
