@@ -4,7 +4,7 @@ services:
     # image: nonnicha007/register-form-ror:latest
     build: .
     volumes:
-      - "./:/rails"
+      - .:/rails
     ports:
       - "80:3000"
     environment:
