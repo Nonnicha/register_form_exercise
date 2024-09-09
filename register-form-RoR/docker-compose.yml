@@ -1,0 +1,14 @@
+services:
+  web:
+    container_name: web
+    # image: nonnicha007/register-form-ror:latest
+    build: .
+    volumes:
+      - "./:/rails"
+    ports:
+      - "80:3000"
+    environment:
+      - RAILS_ENV=production
+      - RAILS_MASTER_KEY=804101aa5a417ca52c9824f5a59a6111
+      - SECRET_KEY_BASE=4e05b67a7a0b0cbd8dbca127571d4606e16ce96447df3816175cf7eb9d9953e68617c205c6378f5c75af989a51adef014236d63838cd6ce31fd833196c6b0ffd
+    command: bash -c "bundle exec rails db:create && bundle exec rails db:migrate && bundle exec rails server -p '3000' -b '0.0.0.0'"
