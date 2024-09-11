@@ -1,0 +1,29 @@
+<%= turbo_frame_tag "confirm_delete_modal" do %>
+  <div id="confirm_delete_modal" class="modal">
+    <div class="modal-content">
+        <p>คุณแน่ใจหรือไม่ว่าต้องการลบการลงทะเบียนนี้?</p>
+        <%= button_to 'ลบ', registration_path(registrationID), method: :delete, data: { turbo_frame: "registrations" }, class: 'delete-button' %>
+        <%= button_to 'ยกเลิก', close_confirm_delete_modal_registration_path, method: :patch, class: 'delete-button' %>
+    </div>
+  </div>
+<% end %>
+
+<style>
+  .modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+  }
+</style>

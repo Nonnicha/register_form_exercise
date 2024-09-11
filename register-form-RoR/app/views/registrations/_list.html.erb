@@ -1,13 +1,5 @@
-<div id="registrations-container">
-  <h1>Registrations</h1>
-
-  <%= form_with url: registrations_path, method: :get, local: true, data: { turbo_frame: "registrations" }, class: "search-form" do %>
-    <%= text_field_tag :query, params[:query], placeholder: "ค้นหา...", class: "search-input" %>
-    <%= submit_tag "ค้นหา", class: "search-button" %>
-  <% end %>
-
-  <turbo-frame id="registrations">
-    <% if @registrations.present? %>
+<turbo-frame id="registrations">
+    <% if registrations.present? %>
       <table class="registrations-table">
         <thead>
           <tr>
@@ -22,7 +14,7 @@
           </tr>
         </thead>
         <tbody>
-          <% @registrations.each do |registration| %>
+          <% registrations.each do |registration| %>
             <tr>
               <td><%= registration.firstName %></td>
               <td><%= registration.lastName %></td>
@@ -43,9 +35,3 @@
       <p class="no-registrations-message">No registrations found.</p>
     <% end %>
   </turbo-frame>
-
-  <%= link_to 'Back to Register', root_path, class: 'back-to-home-button' %>
-</div>
-
-<div id="confirm_delete_modal">
-</div>

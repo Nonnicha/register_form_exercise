@@ -26,10 +26,34 @@ class RegistrationsController < ApplicationController
     end
   end
 
+  def close_confirm_delete_modal
+    respond_to do |format|
+      format.turbo_stream { render turbo_stream: turbo_stream.replace("confirm_delete_modal", partial: "empty") }
+    end
+  end
+
   def destroy
+    puts "destroy"
     @registration = Registration.find(params[:id])
     @registration.destroy
-    redirect_to registration_path
+
+    respond_to do |format|
+      format.turbo_stream do
+        render turbo_stream: [
+          turbo_stream.replace("confirm_delete_modal", partial: "empty"),
+          turbo_stream.replace("registrations", partial: "list", locals: { registrations: Registration.all })
+        ]
+      end
+      format.html { redirect_to registrations_path, notice: "Registration was successfully deleted." }
+    end
+  end
+
+  def confirm_delete
+    puts "confirm_delete"
+    @registration = Registration.find(params[:id])
+    respond_to do |format|
+      format.turbo_stream { render turbo_stream: turbo_stream.replace("confirm_delete_modal", partial: "confirm_delete", locals: { registrationID: @registration }) }
+    end
   end
 
   def edit
