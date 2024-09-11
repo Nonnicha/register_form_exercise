@@ -1,12 +1,12 @@
-<%= turbo_frame_tag "confirm_delete_modal" do %>
-  <div id="confirm_delete_modal" class="modal">
-    <div class="modal-content">
-        <p>คุณแน่ใจหรือไม่ว่าต้องการลบการลงทะเบียนนี้?</p>
-        <%= button_to 'ลบ', registration_path(registrationID), method: :delete, data: { turbo_frame: "registrations" }, class: 'delete-button' %>
-        <%= button_to 'ยกเลิก', close_confirm_delete_modal_registration_path, method: :patch, class: 'delete-button' %>
+<div id="confirm_delete_modal" class="modal" data-controller="modal">
+  <div class="modal-content">
+    <h3>Are you sure you want to delete this registration?</h3>
+    <div class="button-group">
+      <%= button_to 'Confirm', registration_path(registrationID), method: :delete, data: {action: 'modal#close'}, class: 'delete-button' %>
+      <%= button_to 'Cancel', '#', data: {action: 'modal#close'}, class: 'cancel-button' %>
     </div>
   </div>
-<% end %>
+</div>
 
 <style>
   .modal {
@@ -15,15 +15,71 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.7);
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index: 1000;
   }
+
   .modal-content {
-    background: white;
-    padding: 20px;
-    border-radius: 5px;
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    width: 400px;
+    max-width: 100%;
     text-align: center;
+  }
+
+  .button-group {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+
+  .delete-button {
+    background-color: #e74c3c;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+    font-size: 16px;
+  }
+
+  .delete-button:hover {
+    background-color: #c0392b;
+  }
+
+  .cancel-button {
+    background-color: #bdc3c7;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+
+  .cancel-button:hover {
+    background-color: #95a5a6;
+  }
+
+  /* Animation (optional) */
+  .modal-content {
+    animation: modalFadeIn 0.3s ease;
+  }
+
+  @keyframes modalFadeIn {
+    from {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
   }
 </style>

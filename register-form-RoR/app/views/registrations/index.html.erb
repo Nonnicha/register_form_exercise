@@ -32,8 +32,7 @@
               <td><%= registration.phone %></td>
               <td><%= registration.subject %></td>
               <td id="actions-row">
-                <%= link_to 'Edit', edit_registration_path(registration), class: 'edit-button' %>
-                <%= button_to 'Delete', confirm_delete_registration_path(registration), method: :patch, class: 'delete-button' %>
+                <%= button_to 'Delete', confirm_delete_registration_path(registration), method: :get, class: 'delete-button' %>
               </td>
             </tr>
           <% end %>
@@ -49,3 +48,5 @@
 
 <div id="confirm_delete_modal">
 </div>
+
+<%= turbo_frame_tag "modal" %>

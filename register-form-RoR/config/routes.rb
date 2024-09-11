@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  resources :registrations, only: [:index, :show, :create, :destroy, :edit, :update] do
+  resources :registrations do
     member do
-      patch 'confirm_delete'
+      get 'confirm_delete'
       patch 'close_confirm_delete_modal'
     end
   end

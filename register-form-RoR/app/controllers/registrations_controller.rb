@@ -19,54 +19,22 @@ class RegistrationsController < ApplicationController
     else
       @registrations = Registration.all
     end
-
-    respond_to do |format|
-      format.html
-      format.turbo_stream
-    end
-  end
-
-  def close_confirm_delete_modal
-    respond_to do |format|
-      format.turbo_stream { render turbo_stream: turbo_stream.replace("confirm_delete_modal", partial: "empty") }
-    end
   end
 
   def destroy
-    puts "destroy"
     @registration = Registration.find(params[:id])
     @registration.destroy
 
     respond_to do |format|
-      format.turbo_stream do
-        render turbo_stream: [
-          turbo_stream.replace("confirm_delete_modal", partial: "empty"),
-          turbo_stream.replace("registrations", partial: "list", locals: { registrations: Registration.all })
-        ]
-      end
-      format.html { redirect_to registrations_path, notice: "Registration was successfully deleted." }
+      format.turbo_stream { redirect_to registrations_path } # แค่รีเฟรชหน้า
+      format.turbo_stream { render turbo_stream: turbo_stream.replace("modal", partial: "empty") }
+      format.html { redirect_to registrations_path, notice: 'Registration deleted successfully.' }
     end
   end
 
   def confirm_delete
-    puts "confirm_delete"
     @registration = Registration.find(params[:id])
-    respond_to do |format|
-      format.turbo_stream { render turbo_stream: turbo_stream.replace("confirm_delete_modal", partial: "confirm_delete", locals: { registrationID: @registration }) }
-    end
-  end
-
-  def edit
-    @registration = Registration.find(params[:id])
-  end
-  
-  def update
-    @registration = Registration.find(params[:id])
-    if @registration.update(registration_params)
-      redirect_to registrations_path, notice: 'Registration updated successfully.'
-    else
-      render :edit
-    end
+    render turbo_stream: turbo_stream.replace("modal", partial: "confirm_delete", locals: { registrationID: @registration })
   end
 
   private
