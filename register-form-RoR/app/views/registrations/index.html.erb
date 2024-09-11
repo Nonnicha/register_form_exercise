@@ -1,41 +1,48 @@
 <div id="registrations-container">
   <h1>Registrations</h1>
 
-  <% if @registrations.present? %>
-    <table class="registrations-table">
-      <thead>
-        <tr>
-          <th>First Name</th>
-          <th>Last Name</th>
-          <th>Birthday</th>
-          <th>Gender</th>
-          <th>Email</th>
-          <th>Phone</th>
-          <th>Subject</th>
-          <th>Actions</th>
-        </tr>
-      </thead>
-      <tbody>
-        <% @registrations.each do |registration| %>
-          <tr>
-            <td><%= registration.firstName %></td>
-            <td><%= registration.lastName %></td>
-            <td><%= registration.birthday %></td>
-            <td><%= registration.gender %></td>
-            <td><%= registration.email %></td>
-            <td><%= registration.phone %></td>
-            <td><%= registration.subject %></td>
-            <td id="actions-row">
-              <%= link_to 'Edit', edit_registration_path(registration), class: 'edit-button' %>
-              <%= button_to 'Delete', registration_path(registration), method: :delete, class: 'delete-button' %>
-            </td>
-          </tr>
-        <% end %>
-      </tbody>
-    </table>
-  <% else %>
-    <p class="no-registrations-message">No registrations found.</p>
+  <%= form_with url: registrations_path, method: :get, local: true, data: { turbo_frame: "registrations" }, class: "search-form" do %>
+    <%= text_field_tag :query, params[:query], placeholder: "ค้นหา...", class: "search-input" %>
+    <%= submit_tag "ค้นหา", class: "search-button" %>
   <% end %>
+
+  <turbo-frame id="registrations">
+    <% if @registrations.present? %>
+      <table class="registrations-table">
+        <thead>
+          <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Birthday</th>
+            <th>Gender</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Subject</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @registrations.each do |registration| %>
+            <tr>
+              <td><%= registration.firstName %></td>
+              <td><%= registration.lastName %></td>
+              <td><%= registration.birthday %></td>
+              <td><%= registration.gender %></td>
+              <td><%= registration.email %></td>
+              <td><%= registration.phone %></td>
+              <td><%= registration.subject %></td>
+              <td id="actions-row">
+                <%= link_to 'Edit', edit_registration_path(registration), class: 'edit-button' %>
+                <%= button_to 'Delete', registration_path(registration), method: :delete, class: 'delete-button' %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    <% else %>
+      <p class="no-registrations-message">No registrations found.</p>
+    <% end %>
+  </turbo-frame>
 
   <%= link_to 'Back to Register', root_path, class: 'back-to-home-button' %>
 </div>

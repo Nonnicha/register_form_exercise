@@ -13,7 +13,17 @@ class RegistrationsController < ApplicationController
   end
 
   def index
-    @registrations = Registration.all
+    if params[:query].present?
+      query = "%#{params[:query].downcase}%"
+      @registrations = Registration.where("LOWER(firstName) LIKE :query", query: query)
+    else
+      @registrations = Registration.all
+    end
+
+    respond_to do |format|
+      format.html
+      format.turbo_stream
+    end
   end
 
   def destroy

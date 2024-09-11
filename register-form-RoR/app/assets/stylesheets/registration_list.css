@@ -1,10 +1,44 @@
 #registrations-container {
-  max-width: 1000px;
+  position: relative;
+  min-height: 500px;
+  max-width: 1100px;
+  min-width: 1000px;
   margin: 0 auto;
   padding: 20px;
   background-color: #f9f9f9;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+  .search-form {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    .search-input {
+      margin-right: 10px;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    .search-button {
+      padding: 8px 12px;
+      background: linear-gradient(315deg, #433fff, #34ffae, #c64cff);
+      background-size: 400% 400%;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background 0.3s, transform 0.3s;
+
+      &:hover {
+        background: linear-gradient(315deg, #28b58e, #2c2c77, #a83b9b);
+        background-size: 400% 400%;
+        transform: scale(1.01);
+      }
+    }
+  }
 
   h1 {
     font-size: 24px;
@@ -59,9 +93,11 @@
   }
 
   .back-to-home-button {
+    position: absolute;
+    bottom: 10px;
     display: inline-block;
     padding: 10px 15px;
-    width: 100%;
+    width: calc(100% - 30px);
     color: white;
     text-align: center;
     text-decoration: none;
