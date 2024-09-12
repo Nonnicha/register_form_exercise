@@ -146,7 +146,7 @@
 }
 
 .delete-modal-button {
-  background: linear-gradient(315deg, #433fff, #34ffae, #c64cff);
+  background-color: #e74c3c;
   color: white;
   font-weight: bold;
   padding: 10px 20px;
@@ -158,7 +158,7 @@
 }
 
 .delete-modal-button:hover {
-  background: linear-gradient(315deg, #2c2c77, #28b58e, #a83b9b);
+  background-color: #c0392b;
 }
 
 .cancel-button {
