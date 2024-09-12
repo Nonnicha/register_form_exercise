@@ -11,13 +11,13 @@
       <table class="registrations-table">
         <thead>
           <tr>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Birthday</th>
-            <th>Gender</th>
-            <th>Email</th>
-            <th>Phone</th>
-            <th>Subject</th>
+            <th><%= sort_link('firstName', 'First Name', class: 'sortable-link') %></th>
+            <th><%= sort_link('lastName', 'Last Name', class: 'sortable-link') %></th>
+            <th><%= sort_link('birthday', 'Birthday', class: 'sortable-link') %></th>
+            <th><%= sort_link('gender', 'Gender', class: 'sortable-link') %></th>
+            <th><%= sort_link('email', 'Email', class: 'sortable-link') %></th>
+            <th><%= sort_link('phone', 'Phone', class: 'sortable-link') %></th>
+            <th><%= sort_link('subject', 'Subject', class: 'sortable-link') %></th>
             <th>Actions</th>
           </tr>
         </thead>

@@ -13,11 +13,17 @@ class RegistrationsController < ApplicationController
   end
 
   def index
+    @registrations = Registration.all
+
     if params[:query].present?
       query = "%#{params[:query].downcase}%"
       @registrations = Registration.where("LOWER(firstName) LIKE :query", query: query)
+    end
+
+    if params[:sort].present? && params[:direction].present?
+      @registrations = @registrations.order("#{params[:sort]} #{params[:direction]}")
     else
-      @registrations = Registration.all
+      @registrations = @registrations.order("firstName ASC") # default sort na ja
     end
   end
 

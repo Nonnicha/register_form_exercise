@@ -176,7 +176,6 @@
   background-color: #95a5a6;
 }
 
-/* Animation (optional) */
 .modal-content {
   animation: modalFadeIn 0.3s ease;
 }
@@ -190,4 +189,14 @@
     opacity: 1;
     transform: scale(1);
   }
+}
+
+.sortable-link {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.sortable-link:hover {
+  color: darkgray;
 }
