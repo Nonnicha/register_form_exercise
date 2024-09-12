@@ -27,7 +27,6 @@ class RegistrationsController < ApplicationController
 
     respond_to do |format|
       format.turbo_stream { redirect_to registrations_path } # แค่รีเฟรชหน้า
-      format.turbo_stream { render turbo_stream: turbo_stream.replace("modal", partial: "empty") }
       format.html { redirect_to registrations_path, notice: 'Registration deleted successfully.' }
     end
   end
