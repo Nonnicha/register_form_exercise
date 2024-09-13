@@ -6,6 +6,7 @@ class RegistrationsController < ApplicationController
   def create
     @registration = Registration.new(registration_params)
     if @registration.save
+      delete_cached
       redirect_to registrations_path
     else
       render :new
@@ -13,23 +14,38 @@ class RegistrationsController < ApplicationController
   end
 
   def index
-    @registrations = Registration.all
+    cahce_key = "registrations"
+    Rails.logger.info("Cache key: #{cahce_key}")
 
-    if params[:query].present?
-      query = "%#{params[:query].downcase}%"
-      @registrations = Registration.where("LOWER(firstName) LIKE :query", query: query)
+    @registrations_cache = Rails.cache.fetch(cahce_key, expires_in: 5.minutes) do
+      Rails.logger.info("Cache miss")
+      cache_data = Registration.all.to_a
+      Rails.logger.info("Storing all data in cache key: #{cahce_key}")
+      cache_data
     end
 
+    @registrations = @registrations_cache
+
+    if params[:query].present?
+      query = params[:query].downcase
+      @registrations = @registrations.select { |registration| registration.firstName.downcase.include?(query) }
+    end
+    
     if params[:sort].present? && params[:direction].present?
-      @registrations = @registrations.order("#{params[:sort]} #{params[:direction]}")
+      sort_column = params[:sort]
+      sort_direction = params[:direction] == "asc" ? 1 : -1
+  
+      @registrations = @registrations.sort_by { |registration| registration[sort_column] }
+      @registrations.reverse! if sort_direction == -1
     else
-      @registrations = @registrations.order("firstName ASC") # default sort na ja
+      @registrations = @registrations.sort_by(&:firstName)
     end
   end
 
   def destroy
     @registration = Registration.find(params[:id])
     @registration.destroy
+    delete_cached
 
     respond_to do |format|
       format.turbo_stream { redirect_to registrations_path } # แค่รีเฟรชหน้า
@@ -46,5 +62,10 @@ class RegistrationsController < ApplicationController
 
   def registration_params
     params.require(:registration).permit(:firstName, :lastName, :birthday, :gender, :email, :phone, :subject)
+  end
+
+  def delete_cached
+    Rails.cache.delete("registrations")
+    Rails.logger.info("Cache deleted")
   end
 end
