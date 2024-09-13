@@ -1,0 +1,7 @@
+<div id="register_modal" class="modal" data-controller="modal">
+    <div class="modal-content">
+        <h1>Register form</h1>
+        <%= render 'registration_form', locals: { url: registrations_path } %>
+        <%= button_to 'Cancel', registrations_path, data: {action: 'modal#close'}, class: 'cancel-button width-100' %>
+    </div>
+</div>

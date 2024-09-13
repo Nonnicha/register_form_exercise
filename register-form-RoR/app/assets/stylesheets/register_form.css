@@ -17,91 +17,93 @@ body {
 .register-card {
     margin: 10px;
     max-width: 600px;
-    padding: 60px 40px;
+    padding: 50px 40px;
     border-radius: 10px;
     background: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     transition: padding 0.5s ease, max-width 0.5s ease;
+}
 
-    & > h1 {
-        font-size: 30px;
-        font-weight: bold;
-        margin-bottom: 20px;
-        transition: font-size 0.5s ease;
-    }
-    
-    & > .register-form {
-        display: flex;
-        flex-direction: column;
+h1 {
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    transition: font-size 0.5s ease;
+}
 
-        & > #submit-button {
-            margin-top: 10px;
-            width: 100px;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            padding: 10px;
-            font-size: 16px;
-            cursor: pointer;
-            font-weight: 600;
-            background: linear-gradient(315deg, #433fff, #34ffae, #c64cff);
-            background-size: 400% 400%;
-            transition: background 0.3s, transform 0.3s;
+.register-form {
+    display: flex;
+    flex-direction: column;
+}
 
-            &:hover {
-                background: linear-gradient(315deg, #2c2c77, #28b58e, #a83b9b);
-                background-size: 400% 400%;
-                transform: scale(1.05);
-            }
-        }
+.register-form > #submit-button {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: 600;
+    background: linear-gradient(315deg, #433fff, #34ffae, #c64cff);
+    background-size: 400% 400%;
+    transition: background 0.3s, transform 0.3s;
+}
 
-        & > .input-row {
-            display: flex;
-            flex-direction: row;
-            gap: 20px;
-            margin: 20px 0 10px 0;
-            margin-top: 10px;
-            transition: flex-direction 0.5s ease, gap 0.5s ease;
+.register-form > #submit-button:hover {
+    background: linear-gradient(315deg, #2c2c77, #28b58e, #a83b9b);
+    background-size: 400% 400%;
+    transform: scale(1.05);
+}
 
-            & > .input-group {
-                width: 100%;
-                font-size: 16px;
-                transition: width 0.5s ease;
+.register-form > .input-row {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    margin: 20px 0 10px 0;
+    margin-top: 10px;
+    transition: flex-direction 0.5s ease, gap 0.5s ease;
+}
 
-                & > label {
-                    font-size: 18px;
-                    font-weight: 500;
-                }
+.register-form > .input-row > .input-group {
+    width: 100%;
+    font-size: 16px;
+    transition: width 0.5s ease;
+}
 
-                & > input, select {
-                    background-color: #fafafa;
-                    margin-top: 5px;
-                    width: 100%;
-                    border-radius: 5px;
-                    border: 1px solid #ccc;
-                    font-size: 16px;
-                    padding: 10px;
-                    transition: padding 0.5s ease, font-size 0.5s ease;
-                }
+.register-form > .input-row > .input-group > label {
+    font-size: 18px;
+    font-weight: 500;
+}
 
-                & > .radio-button > p {
-                    font-size: 20px;
-                    font-weight: 500;
-                }
+.register-form > .input-row > .input-group > input, 
+.register-form > .input-row > .input-group > select {
+    background-color: #fafafa;
+    margin-top: 5px;
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    padding: 10px;
+    transition: padding 0.5s ease, font-size 0.5s ease;
+}
 
-                & > .radio-button > .radio-group {
-                    accent-color: #5A639C;
-                    height: 100%;
-                    margin-top: 5px;
-                    display: flex;
-                    flex-direction: row;
-                    align-items: center;
-                    gap: 5px;
-                    padding: 10px 0;
-                }
-            }
-        }
-    }
+.register-form > .input-row > .input-group > .radio-button > p {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.register-form > .input-row > .input-group > .radio-button > .radio-group {
+    accent-color: #5A639C;
+    height: 100%;
+    margin-top: 5px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+    padding: 10px 0;
 }
 
 @media (max-width: 600px) {
@@ -110,16 +112,12 @@ body {
         max-width: 90%;
     }
 
-    .register-card > .register-form > h1 {
+    h1 {
         font-size: 24px;
     }
 
-    .register-card > .register-form > .input-row {
+    .register-form > .input-row {
         flex-direction: column;
         gap: 10px;
-    }
-
-    .register-card > .register-form > #submit-button {
-        width: 100%;
     }
 }

@@ -8,112 +8,113 @@
   background-color: #f9f9f9;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
 
-  .search-form {
-    margin-bottom: 20px;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
+#registrations-container .search-form {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
 
-    .search-input {
-      margin-right: 10px;
-      padding: 8px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-    }
+#registrations-container .search-form .search-input {
+  margin-right: 10px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
 
-    .search-button {
-      padding: 8px 12px;
-      background: linear-gradient(315deg, #433fff, #34ffae, #c64cff);
-      background-size: 400% 400%;
-      color: #fff;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-      transition: background 0.3s, transform 0.3s;
+#registrations-container .search-form .search-button {
+  padding: 8px 12px;
+  font-weight: bold;
+  background: linear-gradient(315deg, #433fff, #34ffae, #c64cff);
+  background-size: 400% 400%;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s;
+}
 
-      &:hover {
-        background: linear-gradient(315deg, #28b58e, #2c2c77, #a83b9b);
-        background-size: 400% 400%;
-        transform: scale(1.01);
-      }
-    }
-  }
+#registrations-container .search-form .search-button:hover {
+  background: linear-gradient(315deg, #28b58e, #2c2c77, #a83b9b);
+  background-size: 400% 400%;
+  transform: scale(1.05);
+}
 
-  h1 {
-    font-size: 24px;
-    margin-bottom: 20px;
-    text-align: center;
-  }
+#registrations-container h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  text-align: center;
+}
 
-  .registrations-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 20px;
+#registrations-container .registrations-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
 
-    th, td {
-      padding: 12px;
-      text-align: center;
-      border-bottom: 1px solid #ddd;
-    }
+#registrations-container .registrations-table th, 
+#registrations-container .registrations-table td {
+  padding: 12px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
 
-    th {
-      background-color: #f4f4f4;
-      font-weight: bold;
-    }
+#registrations-container .registrations-table th {
+  background-color: #f4f4f4;
+  font-weight: bold;
+}
 
-    tr:hover {
-      background-color: #f1f1f1;
-      scale: 1.01;
-    }
-  }
+#registrations-container .registrations-table tr:hover {
+  background-color: #f1f1f1;
+  scale: 1.01;
+}
 
-  .no-registrations-message {
-    font-size: 16px;
-    text-align: center;
-  }
+#registrations-container .no-registrations-message {
+  font-size: 16px;
+  text-align: center;
+}
 
-  .delete-button {
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 14px;
-    font-weight: bold;
-    border-radius: 5px;
-    cursor: pointer;
-    background-color: #e74c3c;
-    transition: background-color 0.3s ease;
+#registrations-container .delete-button {
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #e74c3c;
+  transition: background-color 0.3s ease;
+}
 
-    &:hover {
-      background-color: #c0392b;
-    }
-  }
+#registrations-container .delete-button:hover {
+  background-color: #c0392b;
+}
 
-  .back-to-home-button {
-    position: absolute;
-    bottom: 10px;
-    display: inline-block;
-    padding: 10px 15px;
-    width: calc(100% - 30px);
-    color: white;
-    text-align: center;
-    text-decoration: none;
-    border-radius: 5px;
-    font-size: 14px;
-    font-weight: bold;
-    background: linear-gradient(315deg, #433fff, #34ffae, #c64cff);
-    background-size: 400% 400%;
-    transition: background 0.3s, transform 0.3s;
-    
-    &:hover {
-      background: linear-gradient(315deg, #2c2c77, #28b58e, #a83b9b);
-      background-size: 400% 400%;
-      transform: scale(1.01);
-    }
-  }
+#registrations-container .back-to-home-button {
+  position: absolute;
+  bottom: 10px;
+  display: inline-block;
+  padding: 10px 15px;
+  width: calc(100% - 30px);
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: bold;
+  background: linear-gradient(315deg, #433fff, #34ffae, #c64cff);
+  background-size: 400% 400%;
+  transition: background 0.3s, transform 0.3s;
+}
+
+#registrations-container .back-to-home-button:hover {
+  background: linear-gradient(315deg, #2c2c77, #28b58e, #a83b9b);
+  background-size: 400% 400%;
+  transform: scale(1.01);
 }
 
 .modal {
@@ -126,7 +127,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 1000;
 }
 
 .modal-content {
@@ -136,7 +136,6 @@
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
   width: 400px;
   max-width: 100%;
-  text-align: center;
 }
 
 .button-group {
@@ -155,10 +154,12 @@
   cursor: pointer;
   margin-right: 10px;
   font-size: 16px;
+  transition: background 0.3s, transform 0.3s;
 }
 
 .delete-modal-button:hover {
   background-color: #c0392b;
+  transform: scale(1.05);
 }
 
 .cancel-button {
@@ -170,14 +171,52 @@
   border-radius: 5px;
   cursor: pointer;
   font-size: 16px;
+  transition: background 0.3s, transform 0.3s;
 }
 
 .cancel-button:hover {
   background-color: #95a5a6;
+  transform: scale(1.05);
 }
 
 .modal-content {
   animation: modalFadeIn 0.3s ease;
+}
+
+.width-100 {
+  width: 100%;
+}
+
+.align-center {
+  text-align: center;
+}
+
+.row-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.register-button {
+  background: linear-gradient(315deg, #433fff, #c64cff, #34ffae);
+  background-size: 200% 200%;
+  width: 150px;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 16px;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.register-button:hover {
+  background: linear-gradient(315deg, #2c2c77, #a83b9b, #28b58e);
+  background-size: 200% 200%;
+  transform: scale(1.05);
 }
 
 @keyframes modalFadeIn {

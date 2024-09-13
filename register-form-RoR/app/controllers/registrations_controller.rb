@@ -58,6 +58,11 @@ class RegistrationsController < ApplicationController
     render turbo_stream: turbo_stream.replace("modal", partial: "confirm_delete", locals: { registrationID: @registration })
   end
 
+  def register_modal
+    @registration = Registration.new
+    render turbo_stream: turbo_stream.replace("modal", partial: "register_modal", locals: { registrations_path: @registration })
+  end
+
   private
 
   def registration_params
