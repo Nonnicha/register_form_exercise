@@ -1,12 +1,10 @@
 <div id="registrations-container">
   <h1>Registrations</h1>
-
   <div class="row-wrapper">
     <%= form_with url: registrations_path, method: :get, local: true, data: { turbo_frame: "registrations" }, class: "search-form" do %>
       <%= text_field_tag :query, params[:query], placeholder: "ค้นหา...", class: "search-input" %>
       <%= submit_tag "Search", class: "search-button" %>
     <% end %>
-
     <%= button_to '+ Register', register_modal_registrations_path, method: :get, class: 'register-button' %>
   </div>
 
