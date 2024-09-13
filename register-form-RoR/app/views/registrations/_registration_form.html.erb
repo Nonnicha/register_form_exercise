@@ -13,7 +13,7 @@
         <div class="input-row">
           <div class="input-group">
             <%= f.label :birthday, "Birthday:" %>
-            <%= f.date_field :birthday, id: "birthday" %>
+            <%= f.date_field :birthday, id: "birthday", max: 18.years.ago.to_date %>
           </div>
           <div class="input-group">
             <div class="radio-button">
