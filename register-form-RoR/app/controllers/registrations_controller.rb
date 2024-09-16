@@ -14,13 +14,13 @@ class RegistrationsController < ApplicationController
   end
 
   def index
-    cahce_key = "registrations"
-    Rails.logger.info("Cache key: #{cahce_key}")
+    cache_key = "registrations"
+    Rails.logger.info("Cache key: #{cache_key}")
 
-    @registrations_cache = Rails.cache.fetch(cahce_key, expires_in: 5.minutes) do
+    @registrations_cache = Rails.cache.fetch(cache_key, expires_in: 5.minutes) do
       Rails.logger.info("Cache miss")
       cache_data = Registration.all.to_a
-      Rails.logger.info("Storing all data in cache key: #{cahce_key}")
+      Rails.logger.info("Storing all data in cache key: #{cache_key}")
       cache_data
     end
 
