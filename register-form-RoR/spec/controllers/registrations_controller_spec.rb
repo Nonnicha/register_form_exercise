@@ -3,12 +3,12 @@ require 'rails_helper'
 RSpec.describe RegistrationsController, type: :controller do
   let(:valid_attributes) do
     {
-      firstName: Faker::Name.first_name,
-      lastName: Faker::Name.last_name,
-      birthday: Faker::Date.birthday(min_age: 18, max_age: 65),
+      firstName: 'Chanon',
+      lastName: 'Wiriyathanachit',
+      birthday: '1999-09-03',
       gender: 'male',
       email: Faker::Internet.email,
-      phone: Faker::PhoneNumber.phone_number,
+      phone: '0987654321',
       subject: 'Test Subject'
     }
   end
