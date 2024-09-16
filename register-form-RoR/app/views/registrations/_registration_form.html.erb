@@ -2,18 +2,33 @@
         <div class="input-row">
           <div class="input-group">
             <%= f.label :firstName, "First Name:" %>
-            <%= f.text_field :firstName, id: "firstName", required: true %>
+            <%= f.text_field :firstName, id: "firstName", class:"input-container" %>
+            <div class="error-box">
+              <% @registration.errors[:firstName].each do |message| %>
+                <div class="error-message" ><%= message %></div>
+              <% end %>
+            </div>
           </div>
           <div class="input-group">
             <%= f.label :lastName, "Last Name:" %>
-            <%= f.text_field :lastName, id: "lastName", required: true %>
+            <%= f.text_field :lastName, id: "lastName", class:"input-container" %>
+            <div class="error-box">
+              <% @registration.errors[:lastName].each do |message| %>
+                <div class="error-message" ><%= message %></div>
+              <% end %>
+            </div>
           </div>
         </div>
 
         <div class="input-row">
           <div class="input-group">
             <%= f.label :birthday, "Birthday:" %>
-            <%= f.date_field :birthday, id: "birthday", max: 18.years.ago.to_date %>
+            <%= f.date_field :birthday, id: "birthday", class:"input-container", max: 18.years.ago.to_date %>
+            <div class="error-box">
+              <% @registration.errors[:birthday].each do |message| %>
+                <div class="error-message" ><%= message %></div>
+              <% end %>
+            </div>
           </div>
           <div class="input-group">
             <div class="radio-button">
@@ -24,6 +39,11 @@
                 <%= f.radio_button :gender, "Female", id: "female" %>
                 <%= f.label :gender, "Female", for: "female" %><br>
               </div>
+              <div class="error-box">
+                <% @registration.errors[:gender].each do |message| %>
+                  <div class="error-message" ><%= message %></div>
+                <% end %>
+              </div>
             </div>
           </div>
         </div>
@@ -31,11 +51,21 @@
         <div class="input-row">
           <div class="input-group">
             <%= f.label :email, "Email:" %>
-            <%= f.email_field :email, id: "email", required: true %>
+            <%= f.email_field :email, id: "email", class:"input-container" %>
+            <div class="error-box">
+              <% @registration.errors[:email].each do |message| %>
+                <div class="error-message" ><%= message %></div>
+              <% end %>
+            </div>
           </div>
           <div class="input-group">
             <%= f.label :phone, "Phone:" %>
-            <%= f.telephone_field :phone, id: "phone", required: true %>
+            <%= f.telephone_field :phone, id: "phone", class:"input-container" %>
+            <div class="error-box">
+              <% @registration.errors[:phone].each do |message| %>
+                <div class="error-message" ><%= message %></div>
+              <% end %>
+            </div>
           </div>
         </div>
 
@@ -43,6 +73,11 @@
           <div class="input-group">
             <%= f.label :subject, "Subject:" %>
             <%= f.select :subject, options_for_select([['Choose option', nil], 'HTML', 'CSS', 'Javascript'], selected: nil), id: "subjects" %>
+            <div class="error-box">
+              <% @registration.errors[:subject].each do |message| %>
+                <div class="error-message" ><%= message %></div>
+              <% end %>
+            </div>
           </div>
         </div>
 

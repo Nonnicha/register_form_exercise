@@ -9,7 +9,11 @@ class RegistrationsController < ApplicationController
       delete_cached
       redirect_to registrations_path
     else
-      render :new
+      if request.referer&.include?(registrations_path)
+        render turbo_stream: turbo_stream.replace("register_modal", partial: "register_modal", locals: { registrations_path: @registration })
+      else
+        render :new, status: :unprocessable_entity
+      end
     end
   end
 
