@@ -39,9 +39,19 @@ class Lobby
 
   def submit_registration
     click_button 'submit-button'
-    Dashboard.new
   end
 
-  def login_already
+  def login_already(data_table)
+    visit_register_page
+    data_table.hashes.each do |data|
+      fill_first_name(data['First Name'])
+      fill_last_name(data['Last Name'])
+      fill_birthdate(data['Birthday'])
+      choose_gender(data['Gender'])
+      fill_email(data['Email'])
+      fill_phone_number(data['Phone'])
+      select_subject(data['Subject'])
+    end
+    submit_registration
   end
 end

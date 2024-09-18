@@ -19,4 +19,14 @@ class Dashboard
       end
     end
   end
+
+  def delete_registration
+    click_button 'delete_button_1'
+    click_button 'confirm_button_1'
+    sleep 1
+  end
+
+  def saw_no_registration
+    expect(page).not_to have_selector('#registration_1')
+  end
 end

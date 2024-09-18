@@ -130,7 +130,7 @@ RSpec.describe RegistrationsController, type: :controller do
   end
 
   describe 'GET #register_modal' do
-    it 'renders the register modal via Turbo Stream' do
+    it 'renders the register modal Turbo Stream' do
       get :register_modal
 
       expect(response).to have_http_status(:ok)
