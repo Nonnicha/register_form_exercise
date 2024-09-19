@@ -41,8 +41,7 @@ class Lobby
     click_button 'submit-button'
   end
 
-  def login_already(data_table)
-    visit_register_page
+  def fill_all_data(data_table)
     data_table.hashes.each do |data|
       fill_first_name(data['First Name'])
       fill_last_name(data['Last Name'])
@@ -52,6 +51,11 @@ class Lobby
       fill_phone_number(data['Phone'])
       select_subject(data['Subject'])
     end
+  end
+
+  def login_already(data_table)
+    visit_register_page
+    fill_all_data(data_table)
     submit_registration
   end
 end

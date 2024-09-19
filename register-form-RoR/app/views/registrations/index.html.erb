@@ -5,7 +5,7 @@
       <%= text_field_tag :query, params[:query], placeholder: "ค้นหา...", class: "search-input" %>
       <%= submit_tag "Search", class: "search-button" %>
     <% end %>
-    <%= button_to '+ Register', register_modal_registrations_path, method: :get, class: 'register-button' %>
+    <%= button_to '+ Register', register_modal_registrations_path, method: :get, class: 'register-button', id:"register_button" %>
   </div>
 
   <turbo-frame id="registrations">

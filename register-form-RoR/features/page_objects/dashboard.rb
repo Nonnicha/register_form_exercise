@@ -2,6 +2,10 @@ class Dashboard
   include Capybara::DSL
   include RSpec::Matchers
 
+  def visit_dashboard_page
+    visit '/registrations'
+  end
+
   def saw_page(index_page)
     expect(page).to have_content(index_page)
   end
@@ -26,7 +30,16 @@ class Dashboard
     sleep 1
   end
 
+  def click_register_button(button)
+    click_button button
+  end
+
   def saw_no_registration
     expect(page).not_to have_selector('#registration_1')
+  end
+
+  def fill_all_data(data_table)
+    @lobby = Lobby.new
+    @lobby.fill_all_data(data_table)
   end
 end
