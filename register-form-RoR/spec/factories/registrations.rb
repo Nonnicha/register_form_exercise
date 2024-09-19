@@ -1,11 +1,11 @@
 FactoryBot.define do
   factory :registration do
-    firstName { 'Chanon' }
-    lastName  { 'Wiriyathanachit' }
+    firstName { Faker::Name.first_name.gsub(/[^a-zA-Z]/, '') }
+    lastName  { Faker::Name.last_name.gsub(/[^a-zA-Z]/, '') }
+    birthday  { Faker::Date.birthday(min_age: 18, max_age: 65) }
+    gender    { ['Male', 'Female'].sample }
     email     { Faker::Internet.email }
-    phone     { '0987654321' }
-    birthday  { '1999-09-03' }
-    gender    { 'Male' }
-    subject   { 'Test Subject' }
+    phone     { "0#{Faker::Number.number(digits: 9)}" }
+    subject   { ['HTML', 'CSS', 'Javascript'].sample }
   end
 end
